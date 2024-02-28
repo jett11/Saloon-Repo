@@ -10,6 +10,7 @@ public class SaloonBeApplication {
 		SpringApplication.run(SaloonBeApplication.class, args);
 		System.out.println("First push to test code changes");
 		System.out.println("AMit First push to test code changes");
+		System.out.println("Daniel first push to test code changes");
 	}
 
 }
