@@ -2,11 +2,11 @@ package SaloonBE.example.SaloonBE.Entity;
 
 import jakarta.persistence.*;
 
-@Entity
+@Entity //Represent a table stored in a database
 public class Header {
- @Id
+ @Id  // This Indicates The Primary Key In The Table
  @Column
- @GeneratedValue(strategy = GenerationType.AUTO)
+ @GeneratedValue(strategy = GenerationType.AUTO) //It Increment The ID One By One
  private Long id;
  private String logo;
  private String Slogan;
@@ -27,6 +27,7 @@ public class Header {
   this.last_updated_date = last_updated_date;
  }
 
+ // setters updates the value of the variable whereas getter reads the value of the variable
  public Long getId() {
   return id;
  }
