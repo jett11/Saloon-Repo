@@ -15,7 +15,7 @@ public class HeaderAPIController {
     @Autowired
     private HeaderServices headerServices;
     // GetMapping can be used only in method level and for only GET Https method
-    @GetMapping("/header") // pass 1 as id in the parameter to see how to fetch the data by passing id.
+    @GetMapping("/header") // To get All Header data from database
     public List<Header> fetchHeaderList(){
         return headerServices.fetchHeaderList();
     }
