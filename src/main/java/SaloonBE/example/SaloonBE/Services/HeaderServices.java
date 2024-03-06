@@ -10,5 +10,6 @@ public interface HeaderServices {
     List<Header> fetchHeaderList();
     // Update operation
     Header updateHeader(Header header, int id);
+    void deleteHeaderById(int id);
 
 }
