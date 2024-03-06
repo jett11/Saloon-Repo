@@ -3,9 +3,8 @@ package SaloonBE.example.SaloonBE.Controller;
 import SaloonBE.example.SaloonBE.Model.Header;
 import SaloonBE.example.SaloonBE.Services.HeaderServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +17,6 @@ public class HeaderAPIController {
     @GetMapping("/header") // To get All Header data from database
     public List<Header> fetchHeaderList(){
         return headerServices.fetchHeaderList();
+
     }
 }
