@@ -36,4 +36,9 @@ public class HeaderServiceimpl implements HeaderServices{
 
     }
 
+
+    @Override
+   public void deleteHeaderById(int id){
+        headerRepository.deleteById(id);
+   }
 }

@@ -21,18 +21,20 @@ public class HeaderAPIController {
 
     }
 
+    // Update operation
     @PutMapping("/header/{id}")
     public Header updateHeader(@RequestBody Header header, @PathVariable("id") int id) {
 
 
         return headerServices.updateHeader(header, id);
     }
-
-    @PostMapping("/header")
-    public Header saveHeader(@RequestBody Header header) {
-
-   return headerServices.saveHeader(header);
+    @DeleteMapping("/deleteHeaderById/{id}")
+    public String deleteHeaderById(@PathVariable("id")
+                                       int id)
+    {
+        headerServices.deleteHeaderById(id);
+        return "Deleted Successfully" + "With id "+ id;
     }
-
-
 }
+
+
