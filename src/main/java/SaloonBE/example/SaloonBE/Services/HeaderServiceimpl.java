@@ -35,4 +35,10 @@ public class HeaderServiceimpl implements HeaderServices{
         return updatedHeader;
 
     }
+
+    @Override
+   public void deleteHeaderById(int id){
+        headerRepository.deleteById(id);
+   }
+
 }
