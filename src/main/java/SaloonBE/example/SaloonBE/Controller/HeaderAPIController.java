@@ -15,18 +15,24 @@ public class HeaderAPIController {
     private HeaderServices headerServices;
 
     // GetMapping can be used only in method level and for only GET Https method
-   @GetMapping("/header") // To get All Header data from database
+    @GetMapping("/header") // To get All Header data from database
     public List<Header> fetchHeaderList() {
-       return headerServices.fetchHeaderList();
+        return headerServices.fetchHeaderList();
 
-   }
+    }
 
     @PutMapping("/header/{id}")
-    public Header updateHeader(@RequestBody Header header,@PathVariable("id") int id) {
+    public Header updateHeader(@RequestBody Header header, @PathVariable("id") int id) {
 
 
         return headerServices.updateHeader(header, id);
     }
+
+    @PostMapping("/header")
+    public Header saveHeader(@RequestBody Header header) {
+
+   return headerServices.saveHeader(header);
+    }
+
+
 }
-
-

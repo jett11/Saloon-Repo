@@ -11,4 +11,5 @@ public interface HeaderServices {
     // Update operation
     Header updateHeader(Header header, int id);
 
+    Header saveHeader(Header header);
 }

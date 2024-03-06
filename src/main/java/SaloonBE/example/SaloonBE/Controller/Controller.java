@@ -1,6 +1,6 @@
 package SaloonBE.example.SaloonBE.Controller;
-import SaloonBE.example.SaloonBE.entity.Service;
-import SaloonBE.example.SaloonBE.repository.ServiceRepository;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
