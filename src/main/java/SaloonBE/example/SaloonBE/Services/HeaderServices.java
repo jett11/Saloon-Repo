@@ -12,4 +12,5 @@ public interface HeaderServices {
     Header updateHeader(Header header, int id);
     void deleteHeaderById(int id);
 
+Header saveHeader(Header header);
 }
