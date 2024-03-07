@@ -41,4 +41,8 @@ public class HeaderServiceimpl implements HeaderServices{
    public void deleteHeaderById(int id){
         headerRepository.deleteById(id);
    }
+   @Override
+    public Header saveHeader(Header header){
+        return headerRepository.save(header);
+   }
 }
