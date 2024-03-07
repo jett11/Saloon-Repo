@@ -35,7 +35,7 @@ public class HeaderAPIController {
         headerServices.deleteHeaderById(id);
         return "Deleted Successfully" + "With id "+ id;
     }
-    @PostMapping("/Header")
+    @PostMapping("/postHeader")
     public Header saveHeader(@RequestBody Header header){
        return  headerServices.saveHeader(header);
     }
