@@ -11,24 +11,26 @@ public class Header {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private String logo;
-    private String slogan;
-    private String contact_email;
-    private String contact_phone;
-    private String address;
-    private String social_media_links;
-    private Date last_updated_date;
+    private String logo; // as the real image will be stored in the firestore bucket and it will generate a string url so the data type is string
+
+    private String headerBannerImage;
+    private String menu;
+    private String main_text;
+    private String Welcome_text;
+    private String description_below;
+    private String button_name;
+
 
     public Header(){}
-    public Header(int id, String logo, String slogan, String contact_email, String contact_phone, String address, String social_media_links, Date last_updated_date) {
+    public Header(int id, String logo, String headerBannerImage,  String menu, String main_text, String Welcome_text, String description_below, String button_name) {
         this.id = id;
         this.logo = logo;
-        this.slogan = slogan;
-        this.contact_email = contact_email;
-        this.contact_phone = contact_phone;
-        this.address = address;
-        this.social_media_links = social_media_links;
-        this.last_updated_date = last_updated_date;
+        this.headerBannerImage = headerBannerImage;
+        this.menu = menu;
+        this.main_text = main_text;
+        this.Welcome_text = Welcome_text;
+        this.description_below = description_below;
+        this.button_name = button_name;
     }
 
     public int getId() {
@@ -47,51 +49,53 @@ public class Header {
         this.logo = logo;
     }
 
-    public String getSlogan() {
-        return slogan;
+    public String getHeaderBannerImage() {
+        return headerBannerImage;
     }
 
-    public void setSlogan(String slogan) {
-        this.slogan = slogan;
+    public void setHeaderBannerImage(String headerBannerImage) {
+        this.headerBannerImage = headerBannerImage;
     }
 
-    public String getContact_email() {
-        return contact_email;
+    public String getMenu() {
+        return menu;
     }
 
-    public void setContact_email(String contact_email) {
-        this.contact_email = contact_email;
+    public void setMenu(String slogan) {
+        this.menu = menu;
     }
 
-    public String getContact_phone() {
-        return contact_phone;
+    public String getMain_text() {
+        return main_text;
     }
 
-    public void setContact_phone(String contact_phone) {
-        this.contact_phone = contact_phone;
+    public void setMain_text(String contact_email) {
+        this.main_text = main_text;
     }
 
-    public String getAddress() {
-        return address;
+    public String getWelcome_text() {
+        return Welcome_text;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setWelcome_text(String contact_phone) {
+        this.Welcome_text= Welcome_text;
     }
 
-    public String getSocial_media_links() {
-        return social_media_links;
+    public String getDescription_below() {
+        return description_below;
     }
 
-    public void setSocial_media_links(String social_media_links) {
-        this.social_media_links = social_media_links;
+    public void setDescription_below(String description_below) {
+        this.description_below = description_below;
     }
 
-    public Date getLast_updated_date() {
-        return last_updated_date;
+    public String getButton_name() {
+        return button_name;
     }
 
-    public void setLast_updated_date(Date last_updated_date) {
-        this.last_updated_date = last_updated_date;
+    public void setButton_name(String button_name) {
+        this.button_name = button_name;
     }
+
+
 }
