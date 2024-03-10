@@ -13,7 +13,7 @@ public class Header {
 
     private String logo; // as the real image will be stored in the firestore bucket and it will generate a string url so the data type is string
 
-    private String headerBannerImage;
+    private String header_banner_image;
     private String menu;
     private String main_text;
     private String Welcome_text;
@@ -22,13 +22,14 @@ public class Header {
 
 
     public Header(){}
-    public Header(int id, String logo, String headerBannerImage,  String menu, String main_text, String Welcome_text, String description_below, String button_name) {
+
+    public Header(int id, String logo, String header_banner_image, String menu, String main_text, String welcome_text, String description_below, String button_name) {
         this.id = id;
         this.logo = logo;
-        this.headerBannerImage = headerBannerImage;
+        this.header_banner_image = header_banner_image;
         this.menu = menu;
         this.main_text = main_text;
-        this.Welcome_text = Welcome_text;
+        this.Welcome_text = welcome_text;
         this.description_below = description_below;
         this.button_name = button_name;
     }
@@ -49,19 +50,19 @@ public class Header {
         this.logo = logo;
     }
 
-    public String getHeaderBannerImage() {
-        return headerBannerImage;
+    public String getHeader_banner_image() {
+        return header_banner_image;
     }
 
-    public void setHeaderBannerImage(String headerBannerImage) {
-        this.headerBannerImage = headerBannerImage;
+    public void setHeader_banner_image(String header_banner_image) {
+        this.header_banner_image = header_banner_image;
     }
 
     public String getMenu() {
         return menu;
     }
 
-    public void setMenu(String slogan) {
+    public void setMenu(String menu) {
         this.menu = menu;
     }
 
@@ -69,7 +70,7 @@ public class Header {
         return main_text;
     }
 
-    public void setMain_text(String contact_email) {
+    public void setMain_text(String main_text) {
         this.main_text = main_text;
     }
 
@@ -77,8 +78,8 @@ public class Header {
         return Welcome_text;
     }
 
-    public void setWelcome_text(String contact_phone) {
-        this.Welcome_text= Welcome_text;
+    public void setWelcome_text(String welcome_text) {
+        Welcome_text = welcome_text;
     }
 
     public String getDescription_below() {
@@ -96,6 +97,4 @@ public class Header {
     public void setButton_name(String button_name) {
         this.button_name = button_name;
     }
-
-
 }

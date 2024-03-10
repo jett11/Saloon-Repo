@@ -24,8 +24,6 @@ public class HeaderAPIController {
     // Update operation
     @PutMapping("/header/{id}")
     public Header updateHeader(@RequestBody Header header, @PathVariable("id") int id) {
-
-
         return headerServices.updateHeader(header, id);
     }
     @DeleteMapping("/deleteHeaderById/{id}")
