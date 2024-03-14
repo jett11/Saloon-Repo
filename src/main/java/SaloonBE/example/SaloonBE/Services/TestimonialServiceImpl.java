@@ -34,6 +34,9 @@ public class TestimonialServiceImpl implements TestimonialServices {
 
         return testimonialRepository.save(newTestimony);
     }
-
+    @Override
+    public void deleteTestimonyById(Long id){
+        testimonialRepository.deleteById(id);
+    }
 
 }

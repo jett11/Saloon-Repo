@@ -24,4 +24,13 @@ public class TestimonialAPIController {
 
       return   testimonialServices.updateTestimony(testimony,id);
 }
+
+    @DeleteMapping("/deleteTestimonyById/{id}")
+    public String deleteTestimonyById(@PathVariable("id")
+                                   Long id)
+    {
+        testimonialServices.deleteTestimonyById(id);
+        return "Deleted Successfully" + "With id "+ id;
+    }
+
 }
