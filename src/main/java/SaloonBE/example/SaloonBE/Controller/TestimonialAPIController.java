@@ -19,9 +19,9 @@ public class TestimonialAPIController {
         return testimonialServices.fetchTestimonyList();
     }
 
-/*@PutMapping("/testimonial/{id}")
-    public Testimony updateTestimony(@RequestBody Testimony testimony, @PathVariable("id")int id){
+@PutMapping("/testimonial/{id}")
+    public Testimony updateTestimony(@RequestBody Testimony testimony, @PathVariable("id")Long id){
 
-      return   testimonialServices.updateTestimony(testimonialServices,id);
-}*/
+      return   testimonialServices.updateTestimony(testimony,id);
+}
 }
