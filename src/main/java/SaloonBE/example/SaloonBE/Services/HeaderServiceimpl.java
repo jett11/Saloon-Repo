@@ -25,12 +25,12 @@ public class HeaderServiceimpl implements HeaderServices{
         System.out.println("TEST"+ id);
         Header newHeader = headerRepository.findById(id).get();
         newHeader.setLogo(header.getLogo());
-        newHeader.setSlogan(header.getSlogan());
-        newHeader.setAddress(header.getAddress());
-        newHeader.setContact_phone(header.getContact_phone());
-        newHeader.setContact_email(header.getContact_email());
-        newHeader.setSocial_media_links(header.getSocial_media_links());
-        newHeader.setLast_updated_date(header.getLast_updated_date());
+        newHeader.setHeader_banner_image(header.getHeader_banner_image());
+        newHeader.setMenu(header.getMenu());
+        newHeader.setMain_text(header.getMain_text());
+        newHeader.setWelcome_text(header.getWelcome_text());
+        newHeader.setDescription_below(header.getDescription_below());
+        newHeader.setButton_name(header.getButton_name());
         Header updatedHeader = headerRepository.save(newHeader);
         return updatedHeader;
 

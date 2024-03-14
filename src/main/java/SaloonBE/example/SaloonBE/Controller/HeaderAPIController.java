@@ -24,8 +24,6 @@ public class HeaderAPIController {
     // Update operation
     @PutMapping("/header/{id}")
     public Header updateHeader(@RequestBody Header header, @PathVariable("id") int id) {
-
-
         return headerServices.updateHeader(header, id);
     }
     @DeleteMapping("/deleteHeaderById/{id}")
@@ -35,7 +33,7 @@ public class HeaderAPIController {
         headerServices.deleteHeaderById(id);
         return "Deleted Successfully" + "With id "+ id;
     }
-    @PostMapping("/Header")
+    @PostMapping("/postHeader")
     public Header saveHeader(@RequestBody Header header){
        return  headerServices.saveHeader(header);
     }
