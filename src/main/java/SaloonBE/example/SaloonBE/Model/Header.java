@@ -2,7 +2,7 @@ package SaloonBE.example.SaloonBE.Model;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "header")
@@ -14,20 +14,32 @@ public class Header {
     private String logo; // as the real image will be stored in the firestore bucket and it will generate a string url so the data type is string
 
     private String header_banner_image;
-    private String menu;
+    // private String menu;
     private String main_text;
     private String Welcome_text;
     private String description_below;
     private String button_name;
+    @ElementCollection
+    private List<String> menu;
+    //  private String menu;
 
 
-    public Header(){}
+    public List<String> getMenu() {
+        return this.menu;
+    }
+
+    public void setMenu(List<String> menu) {
+        this.menu = menu;
+    }
+
+    public Header() {
+    }
 
     public Header(int id, String logo, String header_banner_image, String menu, String main_text, String welcome_text, String description_below, String button_name) {
         this.id = id;
         this.logo = logo;
         this.header_banner_image = header_banner_image;
-        this.menu = menu;
+        // this.menu = menu;
         this.main_text = main_text;
         this.Welcome_text = welcome_text;
         this.description_below = description_below;
@@ -58,13 +70,15 @@ public class Header {
         this.header_banner_image = header_banner_image;
     }
 
-    public String getMenu() {
-        return menu;
-    }
-
-    public void setMenu(String menu) {
-        this.menu = menu;
-    }
+    //public String getMenu() {
+    //    return menu;
+    //}
+    //public List<String> getMenuAsList() {
+//return List.of(menu.split(","));
+    // }
+    // public void setMenu(String menu) {
+    //   this.menu = menu;
+    //   }
 
     public String getMain_text() {
         return main_text;
@@ -97,4 +111,13 @@ public class Header {
     public void setButton_name(String button_name) {
         this.button_name = button_name;
     }
-}
+
+  //  public String getMenuAsString() {
+
+   // return null;
+
+//public String getMenuAsString() {
+       // String.join(",", this.menu);
+//}
+    }
+
