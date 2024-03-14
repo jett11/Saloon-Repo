@@ -3,7 +3,10 @@ package SaloonBE.example.SaloonBE.Services;
 import SaloonBE.example.SaloonBE.Model.Header;
 import SaloonBE.example.SaloonBE.Repository.HeaderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
+
+import java.util.Arrays;
 import java.util.Objects;
 
 import java.util.List;
@@ -16,7 +19,17 @@ public class HeaderServiceimpl implements HeaderServices{
     @Override
     public List<Header> fetchHeaderList()
     {
-        return (List<Header>) headerRepository.findAll();
+       // List<Header> headerList = (List<Header>) headerRepository.findAll();
+        List<Header> headerList =  headerRepository.findAll();
+
+        for (Header header : headerList) {
+            List<String> menuList = header.getMenu();
+            //String menuString = header.getMenuAsString();
+           //List<String> menuList = Arrays.asList(menuString.split(","));
+            header.setMenu(menuList);
+        }
+        return headerList;
+       // return (List<Header>) headerRepository.findAll();
     }
 
     @Override
@@ -24,17 +37,28 @@ public class HeaderServiceimpl implements HeaderServices{
     {
         System.out.println("TEST"+ id);
         Header newHeader = headerRepository.findById(id).get();
+
         newHeader.setLogo(header.getLogo());
         newHeader.setHeader_banner_image(header.getHeader_banner_image());
         newHeader.setMenu(header.getMenu());
+
         newHeader.setMain_text(header.getMain_text());
         newHeader.setWelcome_text(header.getWelcome_text());
         newHeader.setDescription_below(header.getDescription_below());
         newHeader.setButton_name(header.getButton_name());
         Header updatedHeader = headerRepository.save(newHeader);
-        return updatedHeader;
 
-    }
+
+
+       // String menuString = String.join(",", header.getMenu());
+
+        newHeader.setMenu(header.getMenu());
+       // newHeader.setMenu(menuString);
+        return headerRepository.save(newHeader);
+
+        }
+
+
 
 
     @Override
