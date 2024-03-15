@@ -21,16 +21,22 @@ public class TestimonialServiceImpl implements TestimonialServices {
         return testimonialRepository.findAll();
     }
 
-    /*@Override
-    public Testimony updateTestimony(TestimonialServices testimonialServices, int id) {
+    @Override
+    public Testimony updateTestimony(Testimony testimony, Long id) {
        System.out.println("Test" +id);
-       Testimony newTestimony=TestimonialRepository.findById(id).get();
 
+        Testimony newTestimony = testimonialRepository.findById(id).get();
 
-newTestimony.setcustomerName(updateTestimony().getcustomerName());
+        newTestimony.setCustomerName(testimony.getCustomerName());
+        newTestimony.setFeedback(testimony.getFeedback());
+        newTestimony.setImageUrl(testimony.getImageUrl());
+        newTestimony.setRating(testimony.getRating());
 
-        return testimonialRepository.save(newTestimony-);
-    }*/
-
+        return testimonialRepository.save(newTestimony);
+    }
+    @Override
+    public void deleteTestimonyById(Long id){
+        testimonialRepository.deleteById(id);
+    }
 
 }
