@@ -32,7 +32,10 @@ public class Header {
         this.Welcome_text = welcome_text;
         this.description_below = description_below;
         this.button_name = button_name;
+
     }
+
+
 
     public int getId() {
         return id;
@@ -97,4 +100,12 @@ public class Header {
     public void setButton_name(String button_name) {
         this.button_name = button_name;
     }
+
+
+
+
+    //new setter
+
+
+
 }
