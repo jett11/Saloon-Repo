@@ -1,5 +1,6 @@
 package SaloonBE.example.SaloonBE.Controller;
 
+import SaloonBE.example.SaloonBE.Model.Header;
 import SaloonBE.example.SaloonBE.Model.Testimony;
 import SaloonBE.example.SaloonBE.Services.TestimonialServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,4 +34,11 @@ public class TestimonialAPIController {
         return "Deleted Successfully" + "With id "+ id;
     }
 
+
+    @PostMapping("/postTestimony")
+    public Testimony saveTestimony(@RequestBody Testimony testimony){
+
+        return  testimonialServices.saveTestimony(testimony);
+    }
 }
+

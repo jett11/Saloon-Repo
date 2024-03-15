@@ -11,4 +11,6 @@ public interface TestimonialServices {
     Testimony updateTestimony(Testimony testimony, Long id);
 
     void deleteTestimonyById(Long id);
+
+    Testimony saveTestimony(Testimony testimony);
 }
