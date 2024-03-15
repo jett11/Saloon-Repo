@@ -18,8 +18,10 @@ public class Testimony {
     public String getCustomerName() {
         return customerName;
     }
+
     public Testimony() {
     }
+
     public Testimony(Long id, String customerName, String feedback, int rating, String imageUrl) {
         this.id = id;
         this.customerName = customerName;

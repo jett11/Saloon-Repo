@@ -39,7 +39,6 @@ public class Header {
         this.id = id;
         this.logo = logo;
         this.header_banner_image = header_banner_image;
-        // this.menu = menu;
         this.main_text = main_text;
         this.Welcome_text = welcome_text;
         this.description_below = description_below;
@@ -69,16 +68,6 @@ public class Header {
     public void setHeader_banner_image(String header_banner_image) {
         this.header_banner_image = header_banner_image;
     }
-
-    //public String getMenu() {
-    //    return menu;
-    //}
-    //public List<String> getMenuAsList() {
-//return List.of(menu.split(","));
-    // }
-    // public void setMenu(String menu) {
-    //   this.menu = menu;
-    //   }
 
     public String getMain_text() {
         return main_text;
@@ -112,12 +101,5 @@ public class Header {
         this.button_name = button_name;
     }
 
-  //  public String getMenuAsString() {
-
-   // return null;
-
-//public String getMenuAsString() {
-       // String.join(",", this.menu);
-//}
-    }
+}
 
