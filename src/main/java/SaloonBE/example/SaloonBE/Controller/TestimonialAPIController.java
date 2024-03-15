@@ -19,9 +19,18 @@ public class TestimonialAPIController {
         return testimonialServices.fetchTestimonyList();
     }
 
-/*@PutMapping("/testimonial/{id}")
-    public Testimony updateTestimony(@RequestBody Testimony testimony, @PathVariable("id")int id){
+@PutMapping("/testimonial/{id}")
+    public Testimony updateTestimony(@RequestBody Testimony testimony, @PathVariable("id")Long id){
 
-      return   testimonialServices.updateTestimony(testimonialServices,id);
-}*/
+      return   testimonialServices.updateTestimony(testimony,id);
+}
+
+    @DeleteMapping("/deleteTestimonyById/{id}")
+    public String deleteTestimonyById(@PathVariable("id")
+                                   Long id)
+    {
+        testimonialServices.deleteTestimonyById(id);
+        return "Deleted Successfully" + "With id "+ id;
+    }
+
 }
