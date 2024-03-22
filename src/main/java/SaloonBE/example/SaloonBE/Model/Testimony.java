@@ -12,7 +12,7 @@ public class Testimony {
 
     private String customerName;
     private String feedback;
-    private int rating;
+    private float rating;
     private String imageUrl;
 
     public String getCustomerName() {
@@ -20,7 +20,7 @@ public class Testimony {
     }
     public Testimony() {
     }
-    public Testimony(Long id, String customerName, String feedback, int rating, String imageUrl) {
+    public Testimony(Long id, String customerName, String feedback, float rating, String imageUrl) {
         this.id = id;
         this.customerName = customerName;
         this.feedback = feedback;
@@ -40,11 +40,11 @@ public class Testimony {
         this.feedback = feedback;
     }
 
-    public int getRating() {
+    public float getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(float rating) {
         this.rating = rating;
     }
 
