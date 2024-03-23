@@ -39,7 +39,6 @@ public class Header {
         this.id = id;
         this.logo = logo;
         this.header_banner_image = header_banner_image;
-        // this.menu = menu;
         this.main_text = main_text;
         this.Welcome_text = welcome_text;
         this.description_below = description_below;
