@@ -4,8 +4,6 @@ import SaloonBE.example.SaloonBE.Model.Header;
 import SaloonBE.example.SaloonBE.Services.HeaderServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Arrays;
 import java.util.List;
 
 @RestController

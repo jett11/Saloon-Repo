@@ -3,11 +3,8 @@ package SaloonBE.example.SaloonBE.Services;
 import SaloonBE.example.SaloonBE.Model.Header;
 import SaloonBE.example.SaloonBE.Repository.HeaderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.Objects;
 
 import java.util.List;
 

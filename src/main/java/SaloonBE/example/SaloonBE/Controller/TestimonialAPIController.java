@@ -17,6 +17,7 @@ public class TestimonialAPIController {
 // getting the values from the testimonial table
     @GetMapping("/testimonial")
     public List<Testimony> fetchTestimonialList() {
+
         return testimonialServices.fetchTestimonyList();
     }
 
