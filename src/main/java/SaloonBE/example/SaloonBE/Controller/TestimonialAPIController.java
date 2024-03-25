@@ -11,35 +11,34 @@ import java.util.List;
 @RestController
 @RequestMapping("/saloon")
 public class TestimonialAPIController {
-
     @Autowired
     private TestimonialServices testimonialServices;
-// getting the values from the testimonial table
+
+    // getting the values from the testimonial table
     @GetMapping("/testimonial")
     public List<Testimony> fetchTestimonialList() {
 
         return testimonialServices.fetchTestimonyList();
     }
 
-@PutMapping("/testimonial/{id}")
-    public Testimony updateTestimony(@RequestBody Testimony testimony, @PathVariable("id")Long id){
+    @PutMapping("/testimonial/{id}")
+    public Testimony updateTestimony(@RequestBody Testimony testimony, @PathVariable("id") Long id) {
 
-      return   testimonialServices.updateTestimony(testimony,id);
-}
+        return testimonialServices.updateTestimony(testimony, id);
+    }
 
     @DeleteMapping("/deleteTestimonyById/{id}")
     public String deleteTestimonyById(@PathVariable("id")
-                                   Long id)
-    {
+                                      Long id) {
         testimonialServices.deleteTestimonyById(id);
-        return "Deleted Successfully" + "With id "+ id;
+        return "Deleted Successfully" + "With id " + id;
     }
 
 
     @PostMapping("/postTestimony")
-    public Testimony saveTestimony(@RequestBody Testimony testimony){
+    public Testimony saveTestimony(@RequestBody Testimony testimony) {
 
-        return  testimonialServices.saveTestimony(testimony);
+        return testimonialServices.saveTestimony(testimony);
     }
 }
 
