@@ -1,33 +1,32 @@
 package SaloonBE.example.SaloonBE.Services;
 
-<<<<<<< HEAD
+
 import SaloonBE.example.SaloonBE.DTO.ServiceTypeResponse;
 import SaloonBE.example.SaloonBE.DTO.ServicesResponse;
-=======
 import SaloonBE.example.SaloonBE.DTO.SalonServicesDTO;
 import SaloonBE.example.SaloonBE.DTO.ServiceItemDTO;
->>>>>>> 67dfd4124123b316f499f010756b7555d396ab85
 import SaloonBE.example.SaloonBE.Model.Salon_Services;
 import SaloonBE.example.SaloonBE.Model.Service_Items;
 import SaloonBE.example.SaloonBE.Repository.Salon_Services_Repository;
 import SaloonBE.example.SaloonBE.Repository.ServiceItemsRepository;
-<<<<<<< HEAD
+
 import jakarta.transaction.Transactional;
-=======
+
 import SaloonBE.example.SaloonBE.Repository.ServiceTypeRepository;
->>>>>>> 67dfd4124123b316f499f010756b7555d396ab85
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class Saloon_Services_Service {
     @Autowired
     private Salon_Services_Repository salonServicesRepository;
 
-<<<<<<< HEAD
+
 
     @Autowired
     private ServiceItemsRepository serviceItemsRepository;
@@ -37,20 +36,19 @@ public class Saloon_Services_Service {
         List<ServicesResponse> services = serviceTypeResponse.getServices();
     }
 
-=======
-    @Autowired
-    private ServiceItemsRepository serviceItemsRepository;
 
->>>>>>> 67dfd4124123b316f499f010756b7555d396ab85
+
+
+
     public List<Salon_Services> getAllSalonsWithServices() {
         return salonServicesRepository.findAll();
     }
 
-<<<<<<< HEAD
 
 
 
-=======
+
+
     @Transactional
     public void addServices(SalonServicesDTO request) {
         // Create salon services entity
@@ -68,5 +66,33 @@ public class Saloon_Services_Service {
             serviceItemsRepository.save(serviceItems);
         }
     }
->>>>>>> 67dfd4124123b316f499f010756b7555d396ab85
+    @Transactional
+    public void updateSalonService(int id, SalonServicesDTO updatedData) {
+
+        // Retrieve existing salon service from the database
+        Salon_Services salonService = salonServicesRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Salon service not found with ID: " + id));
+
+        // Update the fields with the new data
+        salonService.setService_name(updatedData.getService_name());
+        salonService.setImage(updatedData.getImage());
+        // Update other properties as needed
+
+        // Save the updated salon service
+        salonServicesRepository.save(salonService);
+
+        updatedData.getServices().forEach(itemRequest -> {
+            Service_Items serviceItem = new Service_Items();
+            serviceItem.setId(itemRequest.getId()); // This will set ID if it's not null, otherwise, it'll be null which is fine for insertions
+            serviceItem.setName(itemRequest.getName());
+            serviceItem.setPrice(itemRequest.getPrice());
+            serviceItem.setSalon_services(salonService); // Set the salon_services_id
+            serviceItemsRepository.save(serviceItem);
+        });
+    }
 }
+
+
+
+
+

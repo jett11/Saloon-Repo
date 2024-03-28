@@ -1,5 +1,6 @@
 package SaloonBE.example.SaloonBE.DTO;
 
+import java.util.Collections;
 import java.util.List;
 
 public class SalonServicesDTO {
@@ -33,7 +34,7 @@ public class SalonServicesDTO {
     }
 
     public List<ServiceItemDTO> getServices() {
-        return services;
+        return services !=null ? services: Collections.emptyList();
     }
 
     public void setServices(List<ServiceItemDTO> services) {

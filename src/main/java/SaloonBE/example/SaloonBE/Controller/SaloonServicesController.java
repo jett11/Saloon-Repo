@@ -1,5 +1,6 @@
 package SaloonBE.example.SaloonBE.Controller;
 
+import SaloonBE.example.SaloonBE.Model.Header;
 import SaloonBE.example.SaloonBE.Model.Salon_Services;
 import SaloonBE.example.SaloonBE.Repository.Salon_Services_Repository;
 import SaloonBE.example.SaloonBE.DTO.SalonServicesDTO;
@@ -33,7 +34,7 @@ private Saloon_Services_Service saloonServicesService;
 
 
     @Autowired
-    private Salon_Services_Repository salonServicesRepository;
+    private Salon_Services_Repository salon_services_repository;
 
     private ServiceItemsRepository serviceItemRepository;
     private Salon_Services_Repository saloonServicesRepository;
@@ -52,4 +53,18 @@ private Saloon_Services_Service saloonServicesService;
         serviceService.addServices(request);
         return ResponseEntity.status(HttpStatus.CREATED).body("Services added successfully");
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateSalonService(@PathVariable int id, @RequestBody SalonServicesDTO updatedData) {
+        try {
+            serviceService.updateSalonService(id, updatedData);
+            return ResponseEntity.ok("Salon service updated successfully");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update salon service: " + e.getMessage());
+        }
+    }
+
+
+
+
 }

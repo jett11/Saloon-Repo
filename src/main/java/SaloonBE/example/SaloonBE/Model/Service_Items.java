@@ -12,26 +12,16 @@ public class Service_Items {
     private String name;
     private Double price;
 
-    private int numberOfServices;
     @ManyToOne
     @JoinColumn(name = "salon_services_id")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Salon_Services salon_services;
 
-    public int getNumberOfServices() {
-        return numberOfServices;
-    }
-
-    public void setNumberOfServices(int numberOfServices) {
-        this.numberOfServices = numberOfServices;
-    }
-
-    public Service_Items(int id, String name, Salon_Services salon_service, Double price) {
+    public Service_Items(int id, String name, Salon_Services salon_services, Double price) {
         this.id = id;
         this.name = name;
         this.salon_services = salon_services;
         this.price = price;
-        this.numberOfServices = numberOfServices;
     }
 
     public Service_Items(){}

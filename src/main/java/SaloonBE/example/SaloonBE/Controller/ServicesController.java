@@ -36,8 +36,7 @@ public class ServicesController {
 
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 67dfd4124123b316f499f010756b7555d396ab85
+
+
 }
