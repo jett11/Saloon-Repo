@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 
 import java.util.List;
-
+@Table(name = "salon_services", uniqueConstraints = @UniqueConstraint(columnNames = {"service_name"}))
 @Entity
 public class Salon_Services {
     @Id
@@ -13,9 +13,11 @@ public class Salon_Services {
 
     private String image;
 
+    @Column(name = "service_name")
     private String service_name;
 
-    @OneToMany(mappedBy = "salon_services", cascade = CascadeType.ALL)
+   /* @OneToMany(mappedBy = "service_name", cascade = CascadeType.ALL)*/
+   @OneToMany(mappedBy = "salon_services", cascade = CascadeType.ALL)
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<Service_Items> services;
 
